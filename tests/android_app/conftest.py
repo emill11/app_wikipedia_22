@@ -8,15 +8,18 @@ from appium import webdriver
 import allure
 
 # url = "http://127.0.0.1:4723/wd/hub"
+
+
 url = "http://127.0.0.1:4723/"
 
 
 @pytest.fixture(scope='function', autouse=True)
 def mobile_management():
     options = UiAutomator2Options().load_capabilities({
-
+        # "platformName": "Android",
+        # "appium:automationName": "UiAutomator2",
         "appium:appWaitActivity": "org.wikipedia.*",
-        "appium:app": "\\Users\\abdrakhmanovea\\Downloads\\app-alpha-universal-release.apk"
+        "appium:app": "C:\\Users\\abdrakhmanovea\\Downloads\\app-alpha-universal-release.apk"
 
     })
 
