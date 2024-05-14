@@ -8,7 +8,7 @@ from config import Config
 
 
 def pytest_addoption(parser):
-    parser.addoption("--context", action="store", default="bstack",
+    parser.addoption("--context", action="store", default="local",
                      help="Context for load options")
 
 
