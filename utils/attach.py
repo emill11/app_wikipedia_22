@@ -1,14 +1,16 @@
 import allure
-import config
+from config import Config
 
 
 def attach_bstack_video(session_id):
+    app_config = Config()
     import requests
+
     bstack_session = requests.get(
         f'https://api.browserstack.com/app-automate/sessions/{session_id}.json',
-        auth=(config.config_app.user_name, config.config_app.access_key),
+        auth=(app_config.user_name, app_config.access_key),
     ).json()
-    print(bstack_session)
+
     video_url = bstack_session['automation_session']['video_url']
 
     allure.attach(
